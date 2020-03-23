@@ -2,7 +2,7 @@
 
 // creo la mia lista di mails
 
- var myArray = ["uno-mail", "due-mail","tre-mail","quattro-mail","ambarabaciccicoccò"];
+ var myArray = ["uno-mail", "due-mail","tre-mail","quattro-mail","cinque-mail"];
 
 // creo una variabile per far inserire all'utente la sua mail
 
@@ -15,22 +15,36 @@ var accessoNegato = "E-mail inserita errata"
 
 // creo condizione
 
-if (userMail === myArray[0] || userMail === myArray[1] || userMail === myArray[2] || userMail === myArray[3] || userMail === myArray[4]) {
-  document.getElementById('output').innerHTML = accessoConsentito;
-} else {
-  document.getElementById('output').innerHTML = accessoNegato;
+var isMailPresente;
 
-//
-// for (var i = 0; i < myArray.length; i++) {
-//
-//
-// }
+for (var i = 0; i < myArray.length; i++) {
 
+  // valorizzare la variabile isMailPresente
+  // per capire se la mail c'è o no
 
-console.log(myArray[i]);
+  if (myArray[i] === userMail) {
 
+    isMailPresente = true;
+
+  } else if (isMailPresente == undefined) {
+
+    isMailPresente = false;
+  }
+
+  console.log(i);
 }
 
+
+// stampare il messaggio in base al valore della variabile (OK)
+
+if (isMailPresente) {
+
+  document.getElementById('output').innerHTML = accessoConsentito;
+
+} else {
+
+  document.getElementById('output').innerHTML = accessoNegato;
+}
 
 
 
